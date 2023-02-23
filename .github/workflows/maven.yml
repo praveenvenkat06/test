@@ -42,7 +42,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - run: |
-        scp -i ${{ secrets.KEY1 }} backend-db.yml ubuntu@54.226.45.72/home/ubuntu && docker-compose -f backend-db.yml up
+        scp -i key1.pem backend-db.yml ubuntu@54.226.45.72/home/ubuntu && docker-compose -f backend-db.yml up
         
 
       
