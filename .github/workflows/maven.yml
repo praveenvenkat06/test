@@ -43,7 +43,7 @@ jobs:
 
     - name: Deploy compose and run in server
       run: |
-        ssh -i key1.pem ubuntu@54.226.45.72
+        ssh -tt -i key1.pem ubuntu@54.226.45.72
   
         
 
