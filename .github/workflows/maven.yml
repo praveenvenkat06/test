@@ -47,7 +47,7 @@ jobs:
         scp -o StrictHostKeyChecking=no -i key.pem backend-db.yml praveen@20.197.6.160:/home/praveen 
         ssh -o StrictHostKeyChecking=no -i key.pem praveen@20.197.6.160 "sudo docker-compose -f backend-db.yml up && exit"
         
-
+#fad
       env:
           KEY: ${{secrets.KEY}}
         
