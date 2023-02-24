@@ -11,7 +11,7 @@ services:
       retries: 3
 
   api:
-    build: praveenvenkat06/test_spring_docker:latest
+    image: praveenvenkat06/test_spring_docker:latest
     ports: 
       - 8080:8080
     depends_on:
