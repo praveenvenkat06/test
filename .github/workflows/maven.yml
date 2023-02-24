@@ -42,7 +42,13 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - run: |
-        scp -i ${{ secrets.KEY1 }} backend-db.yml ubuntu@54.226.45.72/home/ubuntu && docker-compose -f backend-db.yml up
+        echo "$KEY" > key.pem
+        sudo chmod 400 key.pem
+        scp -o "StrictHostKeyChecking no" -i key.pem backend-db.yml ubuntu@54.226.45.72/home/ubuntu 
+        ssh -o "StrictHostKeyChecking no" -i key.pem && docker-compose -f backend-db.yml up
+
+      env:
+          KEY: ${{secrets.KEY}}
         
 
       
